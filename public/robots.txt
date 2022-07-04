@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mateocabanal.ca
+
+# Sitemaps
+Sitemap: https://mateocabanal.ca/sitemap.xml
