@@ -9,6 +9,7 @@ module.exports = {
     fontFamily: {
       sans: ["Akshar", ...defaultTheme.fontFamily.sans],
       body: ["Lora", ...defaultTheme.fontFamily.sans],
+      thin: ["Inconsolata"]
     },
   },
   plugins: [require("daisyui")],

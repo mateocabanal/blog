@@ -5,6 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
+import Script from "next/script";
 
 import Navbar from "../components/Navbar";
 
@@ -26,7 +27,7 @@ class MyDocument extends Document {
             crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;600;700;800&family=Open+Sans:wght@400;600;700&family=Inconsolata:wght@400&display=swap"
             rel="stylesheet"
           />
           <link
@@ -36,6 +37,20 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#1C1C1C" />
         </Head>
         <body>
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=UA-131686490-4"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-131686490-4');
+        `}
+          </Script>
+
           <Navbar />
           <Main />
           <NextScript />

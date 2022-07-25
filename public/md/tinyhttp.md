@@ -1,6 +1,14 @@
-# tinyhttp, a small http library made by me
+---
+title: Tinyhttp
+date: June 2022
+---
 
-## [Crates.io](https://crates.io/crates/tinyhttp) [Github.com](https://github.com/mateocabanal/tinyhttp)
+::title[tinyhttp, a small http library made by me]
+
+::link-at-top[Crates.io]{#https://crates.io/crates/tinyhttp}
+
+::link-at-top[Github.com]{#https://github.com/mateocabanal/tinyhttp}
+
 
 I wrote a HTTP library as a project to help learn Rust. It uses a procedural macro crate under the hood. Procedural macros in Rust are extremely powerful.
 
@@ -38,7 +46,7 @@ fn get(_req: Request) -> &'static str {
 
 Into:
 
-```rust
+```rust+close
 fn get() -> Box<Route> {
 #[allow(non_camel_case_types)]
     struct route {
@@ -111,3 +119,6 @@ fn get() -> Box<Route> {
     Box::new(route::new())
 }
 ```
+### Performance
+
+I haven't been able to test with two proper desktops, however with my i7-4770k as a client and my Raspberry Pi 4 as the server, the Raspberry Pi 4 was able to handle around 15000 req/s.

@@ -1,4 +1,9 @@
-# Making tiny binaries with TCC
+---
+title: Tiny Binaries
+date: September 2020
+---
+
+::title[Making tiny binaries with TCC]
 
 Tiny C Compiler, also known as TCC, is a small C compiler (hence, the name) that also outputs teeny, tiny binaries.
 
