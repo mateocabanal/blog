@@ -9,6 +9,8 @@ date: June 2022
 
 ::link-at-top[Github.com]{#https://github.com/mateocabanal/tinyhttp}
 
+::link-at-top[Live Demo]{#https://mateo-tinyhttp.fly.dev}
+
 
 I wrote a HTTP library as a project to help learn Rust. It uses a procedural macro crate under the hood. Procedural macros in Rust are extremely powerful.
 

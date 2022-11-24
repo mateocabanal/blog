@@ -103,7 +103,8 @@ function Title(props, date) {
 }
 
 function LinksAtTop(props) {
-  let properHref = props.id + '.' + props.className;
+  let collapsedClassName = props.className.replace(/\s+/g, '.');
+  let properHref = props.id + '.' + collapsedClassName;
   return (
     <h2 className="text-3xl align-middle text-center py-4 link-hover link-secondary hover:cursor-pointer">
       <a href={properHref}>
@@ -181,6 +182,7 @@ const Post = ({ data, title, date }) => {
                       language={match[1]}
                       PreTag="div"
                       {...props}
+
                     />
                   </div>
                 )

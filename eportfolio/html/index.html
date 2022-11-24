@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/portfolio/tailwind.css" />
+  <link rel="stylesheet" href="/portfolio/main.css" />
+
+  <title>MATEO'S PORTFOLIO</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="/portfolio/main.js"></script>
+  <div class="container">
+    <section class="background">
+      <div class="content-wrapper">
+        <p class="content-title">Mateo Cabanal</p>
+
+        <div class="content-bottom">
+          <p class="content-subtitle">To continue, scroll down</p>
+        </div>
+      </div>
+    </section>
+    <section class="background">
+      <div class="content-body">
+        <button type="button" onclick="backToDef(this)" class="
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              focus:outline-none
+            ">
+          <span class="sr-only">Close menu</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="text-with-img">
+          <p>
+            Currently, I am a Grade 12 student at Langley Secondary School.
+            I work at <a href="https://codeninjas.com">Code Ninjas</a>, where I teach kids from 5-17 years of age how to
+            program.
+            I love to program, which is what I want to pursue after high school.
+            <br />
+            I enjoy my current job, and I find teaching people programming very fulfilling.
+            It keeps me learning more and more, specifically how to teach younger kids.
+            <br />
+            I have 2 younger brothers, aged 11 and 5.
+          </p>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <p class="content-title">
+          About me
+        </p>
+        <button class="
+              content-toggle
+              bg-transparent
+              hover:bg-gray-700
+              text-gray-200
+              font-semibold
+              hover:text-white
+              py-2
+              border border-gray-200
+              hover:border-transparent
+              rounded
+            " onclick="showContent(this)">
+          SEE MORE
+        </button>
+      </div>
+    </section>
+    <section class="background">
+      <div class="content-body">
+        <button type="button" onclick="backToDef(this)" class="
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              focus:outline-none
+            ">
+          <span class="sr-only">Close menu</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="text-with-img">
+          <p>
+            All of the jobs I have had, required me to have good social skills, either when dealing with difficult
+            customers or when teaching kids how to program.
+            <br />
+            Now, with my latest job I need to keep growing my programming skills as some of the students at my work are
+            ahead of the other kids and need a harder challenge in the form of programming.
+            <br />
+            This requires me to learn more, to keep teaching the students more and more.
+            As a programmer, you never stop learning.
+            <br />
+            I also have experience pushing through high stress events. An example of this is when keeping my composure
+            in a close basketball game nearing the end.
+          </p>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <p class="content-title">
+          Experience
+        </p>
+        <button class="
+              content-toggle
+              bg-transparent
+              hover:bg-gray-700
+              text-gray-200
+              font-semibold
+              hover:text-white
+              py-2
+              border border-gray-200
+              hover:border-transparent
+              rounded
+            " onclick="showContent(this)">
+          SEE MORE
+        </button>
+      </div>
+    </section>
+    <section class="background">
+      <div class="content-body">
+        <button type="button" onclick="backToDef(this)" class="
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              focus:outline-none
+            ">
+          <span class="sr-only">Close menu</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="text-with-img">
+          <img src="/portfolio/images/tinyhttp_build_res.png" onclick="window.open(this.src)"
+            class="float-right cursor-pointer" style="margin-left: 20px" />
+          <p>
+            I am still in high school, however I plan to go to university immediately after I graduate.
+            <br />
+            I plan to pursue a career in Software Engineering.
+            <br />
+            I am a self-tought programmer, knowing a range of languages like: C, C++, Rust, Javascript, Typescript and
+            Python.
+          </p>
+          <p> Here are some examples of my work: </p>
+          <div class="flex-none ml-8 text-blue-300">
+            <ul class="list-disc">
+              <li>
+                <a href="https://github.com/mateocabanal/tinyhttp" class="hover:underline"> Tinyhttp </a>
+              </li>
+              <li>
+                <a href="https://github.com/mateocabanal/textnow-api" class="hover:underline"> Textnow-api </a>
+              </li>
+              <li>
+                <a href="https://github.com/Mcash-project/Mcash" class="hover:underline"> Mcash, my cryptocurrency </a>
+              </li>
+            </ul>
+          </div>
+          <p> This site was coded by me, so this is also part of my examples of work. </p>
+          <p> The HTTP server, in charge of handling connections to and from this website is <a
+              href="https://github.com/mateocabanal/tinyhttp" class="text-blue-300 hover:underline"> Tinyhttp </a>
+            <br />
+            A project I am currently improving.
+          </p>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <p class="content-title">
+          Education
+        </p>
+        <button class="
+              content-toggle
+              bg-transparent
+              hover:bg-gray-700
+              text-gray-200
+              font-semibold
+              hover:text-white
+              py-2
+              border border-gray-200
+              hover:border-transparent
+              rounded
+            " onclick="showContent(this)">
+          SEE MORE
+        </button>
+      </div>
+    </section>
+    <section class="background">
+      <div class="content-body">
+        <button type="button" onclick="backToDef(this)" class="
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              focus:outline-none
+            ">
+          <span class="sr-only">Close menu</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="text-with-img">
+          <p>
+            I want to pursue Software Engineering and get a job at a company like Google, Facebook, Amazon or Apple.
+            <br />
+            I believe my current job is a step in the right direction, which will eventually lead to a job I will love.
+          </p>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <p class="content-title">
+          Ambitions
+        </p>
+        <button class="
+              content-toggle
+              bg-transparent
+              hover:bg-gray-700
+              text-gray-200
+              font-semibold
+              hover:text-white
+              py-2
+              border border-gray-200
+              hover:border-transparent
+              rounded
+            " onclick="showContent(this)">
+          SEE MORE
+        </button>
+      </div>
+    </section>
+    <section class="background">
+      <div class="content-body">
+        <button type="button" onclick="backToDef(this)" class="
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              focus:outline-none
+            ">
+          <span class="sr-only">Close menu</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="text-with-img">
+          <p>
+            I have a strong interest in computers, in all aspects.
+            <br />
+            I also play basketball competively.
+          </p>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <p class="content-title">
+          Interests
+        </p>
+        <button class="
+              content-toggle
+              bg-transparent
+              hover:bg-gray-700
+              text-gray-200
+              font-semibold
+              hover:text-white
+              py-2
+              border border-gray-200
+              hover:border-transparent
+              rounded
+            " onclick="showContent(this)">
+          SEE MORE
+        </button>
+      </div>
+    </section>
+    <section class="background">
+      <div class="content-body">
+        <button type="button" onclick="backToDef(this)" class="
+              rounded-md
+              p-2
+              inline-flex
+              items-center
+              justify-center
+              text-gray-400
+              hover:text-gray-500
+              focus:outline-none
+            ">
+          <span class="sr-only">Close menu</span>
+          <!-- Heroicon name: outline/x -->
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="text-with-img">
+          <img src="images/careers.png" class="float-right" style="margin-left: 20px" />
+          <p>
+            I have considered a few, not all of them. The ones that I have considered are: Anesthesiologist, Aerospace
+            Engineering Technician and Materials Engineer.
+            Those three seem to be the best matches for me besides a job in software engineering. I want to make a
+            change and help people, and wit these three careers, I would be able to do that while discovering new things
+            and creating them too.
+          </p>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <p class="content-title">
+          resume
+        </p>
+        <button class="
+              content-toggle
+              bg-transparent
+              hover:bg-gray-700
+              text-gray-200
+              font-semibold
+              hover:text-white
+              py-2
+              border border-gray-200
+              hover:border-transparent
+              rounded
+            " onclick="location.href='/portfolio/images/resume.pdf'">
+          SEE MORE
+        </button>
+      </div>
+    </section>
+    </section>
+  </div>
+</body>
+
+</html>
