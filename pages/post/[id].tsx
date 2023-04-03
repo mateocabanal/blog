@@ -4,10 +4,13 @@ import remarkGfm from "remark-gfm";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import Head from "next/head";
 import { readdir } from "fs/promises";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import remarkDirective from "remark-directive";
 import remarkDirectiveRehype from "remark-directive-rehype";
 import useCollapse from "react-collapsed";
+
+import React from "react";
+import Flow from "../../components/FlowChart";
 
 const ReactMarkdown = dynamic<any>(() => import("react-markdown") as any, {
   suspense: true,
@@ -88,17 +91,17 @@ export async function getStaticProps({ params }) {
   };
 }
 
-function Title(props, date) {
+function Title(props, date: string) {
   return (
-    <>
+    <div className="rotating-border rotating-border--t my-4">
       <h1
-        className="w-full py-16 font-sans text-6xl text-center align-middle "
+        className="w-full py-16 text-6xl text-accent text-center align-middle font-sans"
         {...props}
       />
       <div className="pb-4 text-2xl text-center">
         <p className="font-medium"> Posted: {date} </p>
       </div>
-    </>
+    </div>
   )
 }
 
@@ -114,7 +117,7 @@ function LinksAtTop(props) {
   )
 }
 
-function CollapseCode(props, children, match) {
+function CollapseCode(props, children, match: string) {
   const [isExpanded, setExpanded] = useState(false)
   const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
 
@@ -139,6 +142,17 @@ function CollapseCode(props, children, match) {
     </div>
   )
 }
+
+const Iframe = (props) => {
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+
+
 
 const Post = ({ data, title, date }) => {
   /*  const router = useRouter();
@@ -168,12 +182,21 @@ const Post = ({ data, title, date }) => {
               if (match == undefined) {
                 match = /language-(\w+)/.exec(className || "")
               }
-              if (!inline && match && match[3] == "close") {
-                return CollapseCode(props, children, match[1])
+
+              if (node.data != undefined) {
+                if (!inline && match && node.data.meta === "close") {
+                  return CollapseCode(props, children, match[1])
+                } else if (!inline && match && node.data.meta == "flow-chart") {
+                  //console.log(String(children).replace(/\n$/, ""));
+                  const json = JSON.parse(String(children).replace(/\n$/, ""));
+                  const nodes = json.nodes;
+                  const edges = json.edges;
+                  return <Flow nodes={nodes} edges={edges} />
+                }
               } else if (!inline) {
                 return (
 
-                  <div className="max-w-screen-md mx-auto">
+                  <div className="max-w-screen-md mx-8">
                     <SyntaxHighlighter
                       // eslint-disable-next-line react/no-children-prop
                       children={String(children).replace(/\n$/, "")}
@@ -193,6 +216,7 @@ const Post = ({ data, title, date }) => {
                 </code>
               )
             },
+            "iframe": ({ node, ...props }) => Iframe(props),
             "title": ({ node, ...props }) => Title(props, date),
             "link-at-top": ({ node, ...props }) => LinksAtTop(props),
             "collapsed-code": ({ node, ...props }) => {
@@ -203,19 +227,24 @@ const Post = ({ data, title, date }) => {
 
             h2: ({ node, ...props }) => (
               <h2
-                className="w-full py-8 mx-auto font-sans text-5xl text-center align-middle"
+                className="w-full py-8 mx-auto font-sans text-5xl align-middle justify-start"
                 {...props}
               />
             ),
             h3: ({ node, ...props }) => (
               <h3
-                className="font-sans self-center px-4 align-middle text-3xl"
+                className="font-sans text-secondary mx-8 text-3xl my-4 rotating-border rotating-border--ha hover:rotating-border--google"
                 {...props}
               />
             ),
+            h5: ({ node, ...props }) => (
+              <h5
+                className="mx-8 font-sans text-accent my-4 text-2xl"
+                {...props} />
+            ),
             p: ({ node, ...props }) => (
               <p
-                className=" px-2 text-lg text-left /*text-gray-100*/ font-body"
+                className="mx-8 text-lg text-left /*text-gray-100*/ font-body"
                 {...props}
               />
             ),
@@ -231,6 +260,9 @@ const Post = ({ data, title, date }) => {
         >
           {data}
         </ReactMarkdown>
+        <div style={{ verticalAlign: "bottom", marginTop: "5rem", textAlign: "center" }}>
+          <p className="font-ligatures">made by ~~{">"} Mateo</p>
+        </div>
       </Suspense>
     </div >
   );

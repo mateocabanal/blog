@@ -41,14 +41,14 @@ It goes from:
 
 ```rust
 #[get("/")]
-fn get(_req: Request) -> &'static str {
+fn get() -> &'static str {
  "Hello, World!"
 }
 ```
 
 Into:
 
-```rust+close
+```rust close
 fn get() -> Box<Route> {
 #[allow(non_camel_case_types)]
     struct route {

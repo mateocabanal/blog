@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://mateocabanal.ca</loc><lastmod>2022-11-08T21:09:49.546Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://mateocabanal.ca/about</loc><lastmod>2022-11-08T21:09:49.546Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://mateocabanal.ca/portfolio</loc><lastmod>2022-11-08T21:09:49.546Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://mateocabanal.ca/post/first</loc><lastmod>2022-11-08T21:09:49.546Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://mateocabanal.ca/post/rust_tutorial</loc><lastmod>2022-11-08T21:09:49.546Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://mateocabanal.ca/post/tiny_binaries</loc><lastmod>2022-11-08T21:09:49.546Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://mateocabanal.ca/post/tinyhttp</loc><lastmod>2022-11-08T21:09:49.546Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/about</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/portfolio</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/series/intro_to_programming</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/series/safenet</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/test</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/first</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/playground</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/rust_tutorial</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/rust_tutorial_calc</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/rust_tutorial_class</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/rust_tutorial_fn</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/rust_tutorial_loops</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/rust_tutorial_rps</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/rust_tutorial_var</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/safenet_part_one</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/tiny_binaries</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://mateocabanal.ca/post/tinyhttp</loc><lastmod>2023-03-28T21:13:45.605Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

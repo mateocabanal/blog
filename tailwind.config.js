@@ -2,13 +2,14 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx,css}",
+    "./components/**/*.{js,ts,jsx,tsx,css}",
   ],
   theme: {
     fontFamily: {
       sans: ["Akshar", ...defaultTheme.fontFamily.sans],
       body: ["Lora", ...defaultTheme.fontFamily.sans],
+      ligatures: ["Fira Code", ...defaultTheme.fontFamily.sans],
       thin: ["Inconsolata"]
     },
   },
@@ -17,7 +18,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        mytheme: {
+        mateo: {
           primary: "#3ABFF8",
 
           secondary: "#828DF8",
@@ -37,6 +38,7 @@ module.exports = {
           error: "#FB6F84",
         },
       },
+      "cupcake"
     ],
   },
 };
