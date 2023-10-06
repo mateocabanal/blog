@@ -138,21 +138,67 @@ However, I am not creating safenet because of some distrust of the NSA, I'm just
 }
 ```
 
-### Body Format
+#### Body Format
 
 To initialize connections, I will be using HTTP to set things up.
 I'll be utilizing my own HTTP server library, [tinyhttp](https://github.com/mateocabanal/tinyhttp) to make the API routes.
-However, after we have initialized the connection, we will stop using HTTP and create my own format. It will be loosely based off HTTP/2 frames.
+These routes are not HTTP compliant, meaning if you use cURL or your average web browser and point them towards any of these endpoints, it will result in an error.
 
+### HTTP/1.1 API:
+
+For client-side requests, I use [minreq](https://github.com/neonmoe/minreq). As of right now, I have three API routes.
+
+##### GET /keys/pub
+
+**This is the only endpoint that is HTTP compliant!**
+
+Returns server public ECDSA key.
+
+##### POST /conn/init
+
+Takes in a body of bytes formatted like:
+```rust
+struct Body {
+  id: [u8; 3], // a string that consists of 3 bytes, e.g "aaa"
+  uuid: [u8; 16], // a uuid
+  ecdsa_public_key: [u8; 49], // client's public key to check against client's ECDH key
+  ecdh_pub_key: [u8; 49], // client's ECDH public key, which is used to generate shared secret
+  ecdh_pub_key_signature: &[u8] // takes the rest of the body, since this is the only variabile with a non-constant size/length
+}
+```
+
+And returns the same.
+
+##### POST /conn/test
+
+Takes a unique body formatted as so:
+```rust
+struct Body {
+  id: [u8; 3],
+  uuid: [u8; 16],
+  msg: &[u8] // Encrypted string, represented as bytes
+}
+```
+
+Returns result of decryption, e.g "200 OK".
+
+### "Safenet API"
+
+I'm still debating whether I should use my existing HTTP library, [tinyhttp](https://github.com/mateocabanal/tinyhttp), or write my own protocol. As of now, I'm leaning towards the former, since I do not have to write a protocol from scrath and I know exactly how my HTTP server will behave. My only concern would be security, however, I only need the status line of the HTTP request to be HTTP compliant. I can have my headers + body encrypted.
 
 ##### Data Frame
 
 ```rust
 struct DataFrame {
   id: u32, // use `from_be_bytes()` to get into array of 4 u8's
-  len: u32,
-  frame_type: u8,
-  body: Vec<u8> 
+  uuid: [u8; 16],
+  body: &[u8] // rest of the frame will be the body
 }
 ```
-The `id` field will be a serialized string, which we can deserialize by getting an array of `[u8: 4]`, which is an array of 4 u8's. Then, we can convert the array into a `String` using `String::from_utf8()`.
+The `id` field will be a serialized string, which we can deserialize by getting an array of `[u8: 3]`, which is an array of 3 u8's. Then, we can convert the array into a `String` using `String::from_utf8()`.
+
+I will use a uuid that is generated at startup, in order to avoid duplicate id's. Due to my current implementation of sorting through peer keys, we cannot use ip's like: `127.0.0.1`/`localhost` or `0.0.0.0`. 
+
+### Usage
+
+Safenet is framework-agnostic, as long as you stay strict to the spec. Specifically, the `/conn/init` must be defined to maintain compatibility.

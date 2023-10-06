@@ -6,6 +6,10 @@
       Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
       Helvetica Neue, Lora, sans-serif;
   }
+
+  code {
+    background-color: hsl(var(--n));
+  }
 }
 
 @tailwind components;
@@ -119,6 +123,23 @@
   line-height: 2;
 } 
 
+.rotating-border--h4 {
+    --border-radius: 0.5rem;
+    --border-size: 0.25rem;
+    --padding: 0.5rem;
+  --border-bg: conic-gradient(
+    hsl(var(--af)) 0.0turn 0.125turn, 
+    hsl(var(--af)) 0.125turn 0.25turn, 
+    hsl(var(--af)) 0.25turn 0.375turn, 
+    hsl(var(--af)) 0.375turn 0.5turn, 
+    hsl(var(--a)) 0.5turn 0.625turn, 
+    hsl(var(--a)) 0.625turn 0.75turn, 
+    hsl(var(--a)) 0.75turn 0.875turn, 
+    hsl(var(--a)) 0.875turn 1.0turn
+  );
+
+  line-height: 2;
+} 
 .rotating-border--t {
     --border-radius: 0.5rem;
     --border-size: 0.25rem;

@@ -4,6 +4,7 @@ import remarkGfm from "remark-gfm";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import Head from "next/head";
 import { readdir } from "fs/promises";
+import { resolve } from "path";
 import { Suspense, useEffect, useState } from "react";
 import remarkDirective from "remark-directive";
 import remarkDirectiveRehype from "remark-directive-rehype";
@@ -11,6 +12,7 @@ import useCollapse from "react-collapsed";
 
 import React from "react";
 import Flow from "../../components/FlowChart";
+import { monokai } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const ReactMarkdown = dynamic<any>(() => import("react-markdown") as any, {
   suspense: true,
@@ -63,11 +65,25 @@ type MarkdownFrontmatter = {
   date?: string;
 };
 
+
+
 export async function getStaticPaths() {
-  const files = await readdir("./public/md/");
+  // Recurisve reading of directories
+  async function walk(dir) {
+    const dirents = await readdir(dir, { withFileTypes: true });
+    const files = await Promise.all(dirents.map((dirent) => {
+      const res = resolve(dir, dirent.name);
+      return dirent.isDirectory() ? walk(res) : res;
+    }));
+    return Array.prototype.concat(...files);
+  }
+
+  let files = await walk("./public/md/")
+  files = files.flat(Number.POSITIVE_INFINITY);
   const paths = files.map((f) => ({
-    params: { id: f.substring(0, f.length - 3) },
+    params: { id: f.substring(f.search("/md/") + 4, f.length - 3).replace("/", ":") },
   }));
+  //  console.log(paths);
   return {
     paths,
     fallback: false,
@@ -75,7 +91,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(`https://mateocabanal.ca/md/${params.id}.md`);
+  let path = params.id.replace(":", "/");
+  const res = await fetch(`https://mateocabanal.ca/md/${path}.md`);
   const text = await res.text();
 
   const { title, metadata, date } =
@@ -211,7 +228,7 @@ const Post = ({ data, title, date }) => {
                 )
               }
               return (
-                <code className={className} {...props}>
+                <code className={className + " font-ligatures text-secondary"} {...props}>
                   {children}
                 </code>
               )
@@ -237,9 +254,15 @@ const Post = ({ data, title, date }) => {
                 {...props}
               />
             ),
+            h4: ({ node, ...props }) => (
+              <h4
+                className="font-sans text-secondary mx-8 text-3xl underline my-8"
+                {...props}
+              />
+            ),
             h5: ({ node, ...props }) => (
               <h5
-                className="mx-8 font-sans text-accent my-4 text-2xl"
+                className="mx-8 font-sans text-accent my-4 text-2xl underline"
                 {...props} />
             ),
             p: ({ node, ...props }) => (

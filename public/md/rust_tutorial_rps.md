@@ -6,7 +6,7 @@ date: December 2022
 ::title[Building a Simple Rock-Paper-Scissors Game in Rust]
 Welcome to our beginner's guide on building a simple rock-paper-scissors game in Rust! In this tutorial, we will be using the concepts covered in our previous tutorials on variables, functions, and loops to create a simple game that allows a user to play against the computer.
 
-###Setting up the Game
+### Setting up the Game
 To get started, we will create a new Rust project using the following command:
 
 ```sh

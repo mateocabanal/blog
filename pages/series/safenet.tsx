@@ -7,7 +7,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center text-center align-middle align-self-center">
                 <div className="my-4 rotating-border rotating-border--ha">
                     <h1 className="text-7xl">
-                        Safenet, a crypto protocol
+                        Safenet, an alternative to HTTPS
                     </h1>
                 </div>
 

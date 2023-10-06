@@ -13,6 +13,17 @@ export default function Home() {
       <Head>
         <title>{"Mateo's Blog"}</title>
       </Head>
+      <Entry
+        nicename="Rust On The 3DS"
+        name="3ds_rust"
+        desc="How to use the best programming language on the 3DS"
+      ></Entry>
+      <EntryWithHref
+        nicename="Safenet Project"
+        name="safenet"
+        desc="A HTTPS-like encrypted protocol without certificates"
+        url="/series/safenet"
+      />
       <EntryWithHref
         nicename="Intro to Rust"
         name="rust_tutorial"

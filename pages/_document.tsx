@@ -35,6 +35,7 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap" rel="stylesheet" />
           <meta name="theme-color" content="#1C1C1C" />
         </Head>
         <body>

@@ -9,7 +9,7 @@ module.exports = {
     fontFamily: {
       sans: ["Akshar", ...defaultTheme.fontFamily.sans],
       body: ["Lora", ...defaultTheme.fontFamily.sans],
-      ligatures: ["Fira Code", ...defaultTheme.fontFamily.sans],
+      ligatures: ["JetBrains Mono", ...defaultTheme.fontFamily.sans],
       thin: ["Inconsolata"]
     },
   },
